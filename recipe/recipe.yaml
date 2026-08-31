@@ -47,7 +47,9 @@ outputs:
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_graph
           pip_check: true
@@ -84,7 +86,9 @@ outputs:
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_ai
           pip_check: true
@@ -113,7 +117,9 @@ outputs:
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_ai
           pip_check: true
@@ -147,7 +153,9 @@ outputs:
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_evals
           pip_check: true
