@@ -1,6 +1,5 @@
 context:
   version: "2.36.0"
-  python_min: "3.10"
 
 recipe:
   name: pydantic_ai
@@ -21,7 +20,7 @@ source:
     target_directory: pydantic-evals/
 
 build:
-  number: 0
+  number: 1
 
 outputs:
   - package:
@@ -41,14 +40,16 @@ outputs:
         - uv-dynamic-versioning >=0.7.0
       run:
         - python >=${{ python_min }}
-        - httpx >=0.27
+        - anyio >=4.7.0
         - logfire-api >=3.14.1
         - pydantic >=2.12
         - typing-inspection >=0.4.0
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_graph
           pip_check: true
@@ -73,18 +74,21 @@ outputs:
         - uv-dynamic-versioning >=0.7.0
       run:
         - python >=${{ python_min }}
+        - anyio >=4.7.0
         - griffelib >=2.0
-        - httpx >=0.27
+        - httpx2 >=2.7
         - pydantic >=2.12
         - pydantic-graph =${{ version }}
         - exceptiongroup >=1.2.2
         - opentelemetry-api >=1.28.0
         - typing-inspection >=0.4.0
-        - genai-prices >=0.0.62
+        - genai-prices >=0.1.4
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_ai
           pip_check: true
@@ -113,7 +117,9 @@ outputs:
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_ai
           pip_check: true
@@ -138,16 +144,18 @@ outputs:
         - uv-dynamic-versioning >=0.7.0
       run:
         - python >=${{ python_min }}
-        - anyio >=0
+        - rich >=13.9.4
         - logfire-api >=3.14.1
         - pydantic >=2.12
         - pydantic-ai-slim =${{ version }}
+        - anyio >=4.7.0
         - pyyaml >=6.0.2
-        - rich >=13.9.4
 
     tests:
       - python:
-          python_version: ${{ python_min }}.*
+          python_version:
+            - ${{ python_min }}.*
+            - "*"
           imports:
             - pydantic_evals
           pip_check: true
