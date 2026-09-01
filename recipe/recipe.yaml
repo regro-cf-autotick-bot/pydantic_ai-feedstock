@@ -1,5 +1,5 @@
 context:
-  version: "2.36.0"
+  version: "2.37.0"
 
 recipe:
   name: pydantic_ai
@@ -7,20 +7,20 @@ recipe:
 
 source:
   - url: https://pypi.org/packages/source/p/pydantic-ai/pydantic_ai-${{ version }}.tar.gz
-    sha256: ca226e7ae900bce881a100cf22a244ba7708db39bd898f6f805cd4b861185469
+    sha256: 30e15b6743a781f4d02ddf535aba437f95b2d2d18504c957a72c048130080754
     target_directory: pydantic-ai/
   - url: https://pypi.org/packages/source/p/pydantic-ai-slim/pydantic_ai_slim-${{ version }}.tar.gz
-    sha256: 43b53401099352bbb0d1a1ecbcf8855bb7c3d0c680311ba006c5549ed6d61039
+    sha256: c4743bdcd6fd0ea60d82088856f3dfcce93180543b2a66587547034f9dc36e57
     target_directory: pydantic-ai-slim/
   - url: https://pypi.org/packages/source/p/pydantic-graph/pydantic_graph-${{ version }}.tar.gz
-    sha256: 1222b50a141f88bca299dc21e94694277e6ef60d6f1bbbf490f2f2796851594a
+    sha256: 447e4635f781ba525452d793be5935381a5a67aa4c81d0f53095cd8a8b626a94
     target_directory: pydantic-graph/
   - url: https://pypi.org/packages/source/p/pydantic-evals/pydantic_evals-${{ version }}.tar.gz
-    sha256: 36b0393865032ed883a3e5eabde551cf2f8d560e2f43b634c82af2da08b20fbd
+    sha256: f787f1d4ce6155c46f948a314079ba7dbf404d4b0edd5101bfa83a5be633847b
     target_directory: pydantic-evals/
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -82,7 +82,7 @@ outputs:
         - exceptiongroup >=1.2.2
         - opentelemetry-api >=1.28.0
         - typing-inspection >=0.4.0
-        - genai-prices >=0.1.4
+        - genai-prices >=0.1.5
 
     tests:
       - python:
